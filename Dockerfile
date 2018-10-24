@@ -11,7 +11,7 @@ LABEL maintainer="sean@linuxacademy.com"
 WORKDIR /app
 ENV NODE_ENV=production
 RUN apk add -U openssh openssl && \
-    adduser -D -h /home/term -s /bin/sh term && \
+    adduser -D -h /home/wettyuser -s /bin/sh wettyuser && \
     echo "wettyuser:wetty123456user" | chpasswd
 EXPOSE 31297
 COPY --from=builder /usr/src/app /app

@@ -12,7 +12,7 @@ WORKDIR /app
 ENV NODE_ENV=production
 RUN apk add -U openssh openssl && \
     adduser -D -h /home/term -s /bin/sh term && \
-    echo "wettyuser:123456wettyuser" | chpasswd
+    echo "wettyuser:wetty123456user" | chpasswd
 EXPOSE 31297
 COPY --from=builder /usr/src/app /app
 RUN echo -e "Host *\n    StrictHostKeyChecking no\n    LogLevel QUIET" >> /etc/ssh/ssh_config

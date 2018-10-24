@@ -1,6 +1,6 @@
 FROM node:boron-alpine as builder
 WORKDIR /usr/src/app
-COPY /opt/websh/app /usr/src/app
+COPY . /usr/src/app
 RUN apk add -U build-base python && \
     yarn && \
     yarn build
